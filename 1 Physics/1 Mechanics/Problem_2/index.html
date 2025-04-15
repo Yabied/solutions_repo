@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 2 - Physics and Mathematics</title>
+<title>Problem Great project! The forced damped pendulum is a classic system that opens up so many fascinating directions, from resonance to chaos theory. - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 2";
+        var mkdocs_page_name = "Problem Great project! The forced damped pendulum is a classic system that opens up so many fascinating directions, from resonance to chaos theory.";
         var mkdocs_page_input_path = "1 Physics/1 Mechanics/Problem_2.md";
         var mkdocs_page_url = null;
       </script>
@@ -48,8 +48,22 @@
 <ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Problem_1/">Problem 1</a>
 </li>
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 2</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem Great project! The forced damped pendulum is a classic system that opens up so many fascinating directions, from resonance to chaos theory.</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#markdown-document-structure">📘 Markdown Document Structure</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-theoretical-foundation">1. Theoretical Foundation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-analysis-of-dynamics">2. Analysis of Dynamics</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-practical-applications">3. Practical Applications</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#4-computational-model-python">4. Computational Model (Python)</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#python-code-outline">🐍 Python Code Outline</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -163,7 +177,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">1 Mechanics</li>
-<li class="breadcrumb-item active">Problem 2</li>
+<li class="breadcrumb-item active">Problem Great project! The forced damped pendulum is a classic system that opens up so many fascinating directions, from resonance to chaos theory.</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -171,7 +185,99 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-2">Problem 2</h1>
+<h1 id="problem-great-project-the-forced-damped-pendulum-is-a-classic-system-that-opens-up-so-many-fascinating-directions-from-resonance-to-chaos-theory">Problem Great project! The forced damped pendulum is a classic system that opens up so many fascinating directions, from resonance to chaos theory.</h1>
+<p>To get you started, here’s a structured plan you can follow for your report and Python notebook:</p>
+<hr/>
+<h2 id="markdown-document-structure">📘 Markdown Document Structure</h2>
+<h3 id="1-theoretical-foundation"><strong>1. Theoretical Foundation</strong></h3>
+<h4 id="governing-equation">📌 Governing Equation:</h4>
+<p>The equation of motion for a forced damped pendulum is:</p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + \gamma \frac{d\theta}{dt} + \omega_0^2 \sin(\theta) = A \cos(\omega t)
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(\theta\)</span> = angular displacement
+- <span class="arithmatex">\(\gamma\)</span> = damping coefficient
+- <span class="arithmatex">\(\omega_0 = \sqrt{g/L}\)</span> = natural frequency
+- <span class="arithmatex">\(A\)</span> = driving amplitude
+- <span class="arithmatex">\(\omega\)</span> = driving frequency</p>
+<h4 id="small-angle-approximation">🧠 Small-Angle Approximation:</h4>
+<p>For small angles, <span class="arithmatex">\(\sin(\theta) \approx \theta\)</span>:</p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + \gamma \frac{d\theta}{dt} + \omega_0^2 \theta = A \cos(\omega t)
+\]</div>
+<p>Solve this using methods for linear ODEs (e.g., undetermined coefficients or Laplace transforms) and identify resonance conditions when <span class="arithmatex">\(\omega \approx \omega_0\)</span>.</p>
+<hr/>
+<h3 id="2-analysis-of-dynamics"><strong>2. Analysis of Dynamics</strong></h3>
+<ul>
+<li>Use simulations to explore how varying:</li>
+<li><span class="arithmatex">\(\gamma\)</span> (damping)</li>
+<li><span class="arithmatex">\(A\)</span> (amplitude)</li>
+<li>
+<p><span class="arithmatex">\(\omega\)</span> (driving frequency)
+  affect motion.</p>
+</li>
+<li>
+<p>Discuss:</p>
+</li>
+<li>Regular periodic motion</li>
+<li>Quasiperiodicity</li>
+<li>Onset of chaos (e.g., using Lyapunov exponents or visual markers)</li>
+</ul>
+<hr/>
+<h3 id="3-practical-applications"><strong>3. Practical Applications</strong></h3>
+<p>Relate the pendulum to:
+- Energy harvesting systems (resonant-based harvesting)
+- Suspension bridges (resonance-related failures)
+- Driven RLC circuits (electrical analog)</p>
+<hr/>
+<h3 id="4-computational-model-python"><strong>4. Computational Model (Python)</strong></h3>
+<p>Include:
+- Numerical solver (e.g., <code>scipy.integrate.solve_ivp</code>)
+- Time series and phase space plots
+- Poincaré sections: sample the state at regular intervals
+- Bifurcation diagram: sweep parameters and plot long-term behavior</p>
+<hr/>
+<h2 id="python-code-outline">🐍 Python Code Outline</h2>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+# Pendulum parameters
+gamma = 0.2     # Damping coefficient
+omega_0 = 1.0   # Natural frequency
+A = 1.2         # Driving force amplitude
+omega = 2/3     # Driving frequency
+
+# ODE system
+def pendulum(t, y):
+    theta, omega_p = y
+    dtheta_dt = omega_p
+    domega_dt = -gamma * omega_p - omega_0**2 * np.sin(theta) + A * np.cos(omega * t)
+    return [dtheta_dt, domega_dt]
+
+# Initial conditions and time span
+y0 = [0.1, 0.0]
+t_span = (0, 100)
+t_eval = np.linspace(*t_span, 10000)
+
+# Solve ODE
+sol = solve_ivp(pendulum, t_span, y0, t_eval=t_eval)
+
+# Plotting
+plt.plot(sol.t, sol.y[0])
+plt.xlabel('Time')
+plt.ylabel('Theta (rad)')
+plt.title('Forced Damped Pendulum Motion')
+plt.grid(True)
+plt.show()
+</code></pre>
+<p>From here, you can:
+- Add sliders for interactive control (e.g., with <code>ipywidgets</code>)
+- Generate Poincaré sections: <code>theta</code> and <code>omega</code> sampled at integer multiples of driving period <span class="arithmatex">\( T = \frac{2\pi}{\omega} \)</span>
+- Create bifurcation plots by sweeping <code>A</code> or <code>omega</code></p>
+<hr/>
+<p>h</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
