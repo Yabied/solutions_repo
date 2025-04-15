@@ -56,10 +56,28 @@
 <ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Problem_1/">Problem 1</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
+<li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2Great! Here's how we can structure your Markdown document and Python notebook to cover everything:</a>
 </li>
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 3</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#motivation">🚀 Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#theoretical-background">📐 Theoretical Background</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#newtons-law-of-gravitation">Newton’s Law of Gravitation:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#equation-of-motion-in-a-central-gravitational-field">Equation of Motion in a Central Gravitational Field:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#total-mechanical-energy">Total Mechanical Energy:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#numerical-simulation-python">🧮 Numerical Simulation (Python)</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#discussion-trajectories-and-their-implications">🌍 Discussion: Trajectories and Their Implications</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#extensions-and-visualization-ideas">📊 Extensions and Visualization Ideas</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -171,11 +189,131 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-3">Problem 3</h1>
+<p>Great! That’s an awesome project—it ties together core ideas in orbital mechanics with practical simulations. Here's how you can structure your Markdown document and Python code to meet the deliverables:</p>
+<hr/>
+<h2 id="trajectories-of-a-freely-released-payload-near-earth">📘 <strong>Trajectories of a Freely Released Payload Near Earth</strong></h2>
+<h3 id="motivation">🚀 <strong>Motivation</strong></h3>
+<p>When a payload is released from a rocket near Earth, its path depends heavily on the initial velocity and release altitude. This investigation reveals how gravitational forces and motion interact to produce diverse trajectories—ranging from elliptical to hyperbolic and parabolic. These principles are central to mission design, reentry strategies, and interplanetary transfers.</p>
+<hr/>
+<p>$$</p>
+<h3 id="theoretical-background">📐 <strong>Theoretical Background</strong></h3>
+<h4 id="newtons-law-of-gravitation">Newton’s Law of Gravitation:</h4>
+<p>$$
+F = \frac{GMm}{r^2}
+]</p>
+<h4 id="equation-of-motion-in-a-central-gravitational-field">Equation of Motion in a Central Gravitational Field:</h4>
+<p>$$
+\ddot{\vec{r}} = -\frac{GM}{r^3} \vec{r}
+]</p>
+<p>Where:
+- ( G $ is the gravitational constant,
+- ( M $ is Earth's mass,
+- ( r $ is the distance from Earth’s center,
+- ( \vec{r} $ is the position vector.</p>
+<h4 id="total-mechanical-energy">Total Mechanical Energy:</h4>
+<p>$$
+E = \frac{1}{2}mv^2 - \frac{GMm}{r}
+]
+- If ( E &lt; 0 $: Elliptical orbit
+- If ( E = 0 $: Parabolic trajectory
+- If ( E &gt; 0 $: Hyperbolic escape</p>
+<hr/>
+<h3 id="numerical-simulation-python">🧮 <strong>Numerical Simulation (Python)</strong></h3>
+<p>We’ll implement a basic gravitational simulator using the Velocity Verlet integration method.</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+G = 6.67430e-11       # Gravitational constant [m^3 kg^-1 s^-2]
+M = 5.972e24          # Earth mass [kg]
+R_earth = 6.371e6     # Earth radius [m]
+
+# Initial conditions
+r0 = np.array([R_earth + 300e3, 0])   # 300 km altitude
+v0 = np.array([0, 7600])             # velocity in m/s (adjust for scenario)
+
+# Time parameters
+dt = 1                               # time step [s]
+t_max = 10000                        # total simulation time [s]
+
+# Simulation arrays
+r = r0.copy()
+v = v0.copy()
+positions = [r.copy()]
+
+# Velocity Verlet integration
+for _ in range(int(t_max / dt)):
+    r_norm = np.linalg.norm(r)
+    a = -G * M * r / r_norm**3
+    r_new = r + v * dt + 0.5 * a * dt**2
+    a_new = -G * M * r_new / np.linalg.norm(r_new)**3
+    v += 0.5 * (a + a_new) * dt
+    r = r_new
+    positions.append(r.copy())
+
+positions = np.array(positions)
+
+# Plotting
+plt.figure(figsize=(8, 8))
+plt.plot(positions[:, 0] / 1e3, positions[:, 1] / 1e3, label="Payload Path")
+circle = plt.Circle((0, 0), R_earth / 1e3, color='b', label="Earth")
+plt.gca().add_patch(circle)
+plt.xlabel("x [km]")
+plt.ylabel("y [km]")
+plt.axis('equal')
+plt.grid(True)
+plt.legend()
+plt.title("Trajectory of Released Payload Near Earth")
+plt.show()
+</code></pre>
+<hr/>
+<h3 id="discussion-trajectories-and-their-implications">🌍 <strong>Discussion: Trajectories and Their Implications</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Initial Speed</th>
+<th>Energy</th>
+<th>Trajectory</th>
+<th>Application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reentry</strong></td>
+<td>&lt; Orbital Velocity</td>
+<td>( E &lt; 0 $</td>
+<td>Suborbital/elliptical</td>
+<td>Capsule return, deorbit</td>
+</tr>
+<tr>
+<td><strong>Stable Orbit</strong></td>
+<td>Orbital Velocity</td>
+<td>( E &lt; 0 $</td>
+<td>Elliptical/Circular</td>
+<td>Satellite insertion</td>
+</tr>
+<tr>
+<td><strong>Escape</strong></td>
+<td>&gt; Escape Velocity</td>
+<td>( E &gt; 0 $</td>
+<td>Hyperbolic</td>
+<td>Interplanetary missions</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="extensions-and-visualization-ideas">📊 <strong>Extensions and Visualization Ideas</strong></h3>
+<ul>
+<li>Overlay Earth’s atmosphere and geostationary orbit.</li>
+<li>Animate the trajectory for different initial speeds/angles.</li>
+<li>Compute escape velocity at varying altitudes.</li>
+</ul>
+<p>--</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../Problem_2/" title="Problem 2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-left" href="../Problem_2/" title="Problem 2Great! Here's how we can structure your Markdown document and Python notebook to cover everything:"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 <a class="btn btn-neutral float-right" href="../../3%20Waves/Problem_1/" title="Problem 1">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
