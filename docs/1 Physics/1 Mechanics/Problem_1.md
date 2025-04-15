@@ -103,6 +103,6 @@ This simulation can be extended to account for varying initial conditions and ex
 
 ## Conclusion
 By systematically analyzing the relationship between the angle of projection and the range of a projectile, we uncover key insights that are not only fundamental to physics but also widely applicable in engineering, sports science, and aerospace technology. Computational modeling further enhances our ability to visualize and understand these relationships, providing a powerful tool for both theoretical and practical applications.
-
+that
 
 
