@@ -14,26 +14,26 @@ $$
 #### Newton’s Law of Gravitation:
 $$
 F = \frac{GMm}{r^2}
-\]
+$
 
 #### Equation of Motion in a Central Gravitational Field:
 $$
 \ddot{\vec{r}} = -\frac{GM}{r^3} \vec{r}
-\]
+$
 
 Where:
-- \( G $ is the gravitational constant,
-- \( M $ is Earth's mass,
-- \( r $ is the distance from Earth’s center,
-- \( \vec{r} $ is the position vector.
+- $ G $ is the gravitational constant,
+- $ M $ is Earth's mass,
+- $ r $ is the distance from Earth’s center,
+- $ \vec{r} $ is the position vector.
 
 #### Total Mechanical Energy:
 $$
 E = \frac{1}{2}mv^2 - \frac{GMm}{r}
-\]
-- If \( E < 0 $: Elliptical orbit
-- If \( E = 0 $: Parabolic trajectory
-- If \( E > 0 $: Hyperbolic escape
+$
+- If $ E < 0 $: Elliptical orbit
+- If $ E = 0 $: Parabolic trajectory
+- If $ E > 0 $: Hyperbolic escape
 
 ---
 
@@ -95,9 +95,9 @@ plt.show()
 
 | Scenario | Initial Speed | Energy | Trajectory | Application |
 |----------|----------------|--------|------------|-------------|
-| **Reentry** | < Orbital Velocity | \( E < 0 $ | Suborbital/elliptical | Capsule return, deorbit |
-| **Stable Orbit** | Orbital Velocity | \( E < 0 $ | Elliptical/Circular | Satellite insertion |
-| **Escape** | > Escape Velocity | \( E > 0 $ | Hyperbolic | Interplanetary missions |
+| **Reentry** | < Orbital Velocity | $ E < 0 $ | Suborbital/elliptical | Capsule return, deorbit |
+| **Stable Orbit** | Orbital Velocity | $ E < 0 $ | Elliptical/Circular | Satellite insertion |
+| **Escape** | > Escape Velocity | $ E > 0 $ | Hyperbolic | Interplanetary missions |
 
 ---
 

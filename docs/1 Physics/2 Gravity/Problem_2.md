@@ -13,11 +13,11 @@ Escape and cosmic velocities form the foundation of astrodynamics and space miss
 
 #### 1. **First Cosmic Velocity** (Orbital Velocity)
 - Minimum velocity needed to stay in a stable circular orbit just above a celestial body’s surface.
-- $ v_1 = \sqrt{\frac{GM}{R}} \)
+- $ v_1 = \sqrt{\frac{GM}{R}} $
 
 #### 2. **Second Cosmic Velocity** (Escape Velocity)
 - Minimum velocity to completely escape the gravitational field without further propulsion.
-- $ v_2 = \sqrt{2GM/R} \)
+- $ v_2 = \sqrt{2GM/R} $
 
 #### 3. **Third Cosmic Velocity** (Solar System Escape Velocity)
 - Minimum velocity to escape the gravitational influence of the Sun (or central star) from a planet’s orbit.
@@ -27,13 +27,13 @@ Escape and cosmic velocities form the foundation of astrodynamics and space miss
 
 ### 🧮 Mathematical Derivations
 Let:
-- $ G \) = gravitational constant
-- $ M \) = mass of the celestial body
-- $ R \) = radius from center of mass
+- $ G $ = gravitational constant
+- $ M $ = mass of the celestial body
+- $ R $ = radius from center of mass
 
 **Key Insight**:
-- $ v_2 = \sqrt{2} \cdot v_1 \)
-- $ v_3 \) is derived from energy conservation involving both planet and solar system dynamics.
+- $ v_2 = \sqrt{2} \cdot v_1 $
+- $ v_3 $ is derived from energy conservation involving both planet and solar system dynamics.
 
 ---
 
