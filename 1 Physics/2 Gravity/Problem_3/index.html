@@ -54,7 +54,7 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">2 Gravity</a>
 <ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../Problem_1/">Problem 1# Kepler's Third Law Simulation and Analysis</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2Great! Here's how we can structure your Markdown document and Python notebook to cover everything:</a>
 </li>
@@ -200,23 +200,23 @@
 <h4 id="newtons-law-of-gravitation">Newton’s Law of Gravitation:</h4>
 <p>$$
 F = \frac{GMm}{r^2}
-]</p>
+$</p>
 <h4 id="equation-of-motion-in-a-central-gravitational-field">Equation of Motion in a Central Gravitational Field:</h4>
 <p>$$
 \ddot{\vec{r}} = -\frac{GM}{r^3} \vec{r}
-]</p>
+$</p>
 <p>Where:
-- ( G $ is the gravitational constant,
-- ( M $ is Earth's mass,
-- ( r $ is the distance from Earth’s center,
-- ( \vec{r} $ is the position vector.</p>
+- $ G $ is the gravitational constant,
+- $ M $ is Earth's mass,
+- $ r $ is the distance from Earth’s center,
+- $ \vec{r} $ is the position vector.</p>
 <h4 id="total-mechanical-energy">Total Mechanical Energy:</h4>
 <p>$$
 E = \frac{1}{2}mv^2 - \frac{GMm}{r}
-]
-- If ( E &lt; 0 $: Elliptical orbit
-- If ( E = 0 $: Parabolic trajectory
-- If ( E &gt; 0 $: Hyperbolic escape</p>
+$
+- If $ E &lt; 0 $: Elliptical orbit
+- If $ E = 0 $: Parabolic trajectory
+- If $ E &gt; 0 $: Hyperbolic escape</p>
 <hr/>
 <h3 id="numerical-simulation-python">🧮 <strong>Numerical Simulation (Python)</strong></h3>
 <p>We’ll implement a basic gravitational simulator using the Velocity Verlet integration method.</p>
@@ -282,21 +282,21 @@ plt.show()
 <tr>
 <td><strong>Reentry</strong></td>
 <td>&lt; Orbital Velocity</td>
-<td>( E &lt; 0 $</td>
+<td>$ E &lt; 0 $</td>
 <td>Suborbital/elliptical</td>
 <td>Capsule return, deorbit</td>
 </tr>
 <tr>
 <td><strong>Stable Orbit</strong></td>
 <td>Orbital Velocity</td>
-<td>( E &lt; 0 $</td>
+<td>$ E &lt; 0 $</td>
 <td>Elliptical/Circular</td>
 <td>Satellite insertion</td>
 </tr>
 <tr>
 <td><strong>Escape</strong></td>
 <td>&gt; Escape Velocity</td>
-<td>( E &gt; 0 $</td>
+<td>$ E &gt; 0 $</td>
 <td>Hyperbolic</td>
 <td>Interplanetary missions</td>
 </tr>
